@@ -1,0 +1,161 @@
+-- MySQL Administrator dump 1.4
+--
+-- ------------------------------------------------------
+-- Server version	5.5.25a
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+
+
+--
+-- Create schema psmpa
+--
+
+CREATE DATABASE IF NOT EXISTS psmpa;
+USE psmpa;
+
+--
+-- Definition of table `bppatientregisteration`
+--
+
+DROP TABLE IF EXISTS `bppatientregisteration`;
+CREATE TABLE `bppatientregisteration` (
+  `Sno` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `Patient_Name` varchar(45) DEFAULT NULL,
+  `Bp_Range` varchar(45) DEFAULT NULL,
+  `Sugar_Level` varchar(45) DEFAULT NULL,
+  `Blood_Test` varchar(45) DEFAULT NULL,
+  `Urine_Level` varchar(45) DEFAULT NULL,
+  `Weight` varchar(45) NOT NULL,
+  PRIMARY KEY (`Sno`)
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `bppatientregisteration`
+--
+
+/*!40000 ALTER TABLE `bppatientregisteration` DISABLE KEYS */;
+INSERT INTO `bppatientregisteration` (`Sno`,`Patient_Name`,`Bp_Range`,`Sugar_Level`,`Blood_Test`,`Urine_Level`,`Weight`) VALUES 
+ (15,'Mr.XXX','<,áœ°%à–¢þâ$U¼h','<,áœ°%à–¢þâ$U¼h','<,áœ°%à–¢þâ$U¼h','>ˆº§ò9u&.>–ë\nÏ*','65');
+/*!40000 ALTER TABLE `bppatientregisteration` ENABLE KEYS */;
+
+
+--
+-- Definition of table `generalpatientregisteration`
+--
+
+DROP TABLE IF EXISTS `generalpatientregisteration`;
+CREATE TABLE `generalpatientregisteration` (
+  `Sno` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `Patient_Name` varchar(45) DEFAULT NULL,
+  `Bp_Range` varchar(45) DEFAULT NULL,
+  `Cold` varchar(45) DEFAULT NULL,
+  `Fever` varchar(45) DEFAULT NULL,
+  `Weight` varchar(45) DEFAULT NULL,
+  `Headache` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`Sno`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `generalpatientregisteration`
+--
+
+/*!40000 ALTER TABLE `generalpatientregisteration` DISABLE KEYS */;
+INSERT INTO `generalpatientregisteration` (`Sno`,`Patient_Name`,`Bp_Range`,`Cold`,`Fever`,`Weight`,`Headache`) VALUES 
+ (7,'Mr.XXX','ÃE´ƒäm<&1m®Ã','Ž ˆ,1)Õ¯ÒŠÒú¸ÁR†','é¼qó§¢ð}¹…Z3[:Ø','56','Ã…o1´®2¡ýðê^\r]');
+/*!40000 ALTER TABLE `generalpatientregisteration` ENABLE KEYS */;
+
+
+--
+-- Definition of table `heartpatientregisteration`
+--
+
+DROP TABLE IF EXISTS `heartpatientregisteration`;
+CREATE TABLE `heartpatientregisteration` (
+  `Sno` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `Patient_Name` varchar(45) DEFAULT NULL,
+  `Bp_Range` varchar(45) DEFAULT NULL,
+  `Pulse_Level` varchar(45) DEFAULT NULL,
+  `Take_AnyMedicine` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`Sno`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `heartpatientregisteration`
+--
+
+/*!40000 ALTER TABLE `heartpatientregisteration` DISABLE KEYS */;
+INSERT INTO `heartpatientregisteration` (`Sno`,`Patient_Name`,`Bp_Range`,`Pulse_Level`,`Take_AnyMedicine`) VALUES 
+ (1,'Mr.Krishna','ùHÒ¤ÓùÇhDôQ+D·M','º­Î%°„ƒ×O™ŠÏá','ësø,_Iø)W»}ìîCHô');
+/*!40000 ALTER TABLE `heartpatientregisteration` ENABLE KEYS */;
+
+
+--
+-- Definition of table `outpatientregisteration`
+--
+
+DROP TABLE IF EXISTS `outpatientregisteration`;
+CREATE TABLE `outpatientregisteration` (
+  `Sno` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `Patient_Name` varchar(45) DEFAULT NULL,
+  `BedNo` varchar(45) DEFAULT NULL,
+  `Address` varchar(45) DEFAULT NULL,
+  `Payment_Type` varchar(45) DEFAULT NULL,
+  `Contact` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`Sno`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `outpatientregisteration`
+--
+
+/*!40000 ALTER TABLE `outpatientregisteration` DISABLE KEYS */;
+INSERT INTO `outpatientregisteration` (`Sno`,`Patient_Name`,`BedNo`,`Address`,`Payment_Type`,`Contact`) VALUES 
+ (2,'Mr.Fruit','12',NULL,'Creditcard','1234567898');
+/*!40000 ALTER TABLE `outpatientregisteration` ENABLE KEYS */;
+
+
+--
+-- Definition of table `patientregisteration`
+--
+
+DROP TABLE IF EXISTS `patientregisteration`;
+CREATE TABLE `patientregisteration` (
+  `Sno` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `Patient_Name` varchar(45) NOT NULL,
+  `Age` varchar(45) DEFAULT NULL,
+  `Address` varchar(45) DEFAULT NULL,
+  `Contact_No` varchar(45) DEFAULT NULL,
+  `Password` varchar(45) NOT NULL,
+  `Register_Date` varchar(45) DEFAULT NULL,
+  `MailId` varchar(45) NOT NULL,
+  PRIMARY KEY (`Sno`,`Patient_Name`,`MailId`,`Password`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=58 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `patientregisteration`
+--
+
+/*!40000 ALTER TABLE `patientregisteration` DISABLE KEYS */;
+INSERT INTO `patientregisteration` (`Sno`,`Patient_Name`,`Age`,`Address`,`Contact_No`,`Password`,`Register_Date`,`MailId`) VALUES 
+ (56,'Mr.XXX','12','chennai`','12365478995','7O8HIq','08/19/2014','xxx@yahoo.com'),
+ (57,'Mr.Krishna','55','Washermanpet','3214569875','OAL8Hw','08/10/2014','krishna@gmail.com');
+/*!40000 ALTER TABLE `patientregisteration` ENABLE KEYS */;
+
+
+
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
